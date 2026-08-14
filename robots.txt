@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://annetcccc.github.io/studakpl/sitemap.xml
