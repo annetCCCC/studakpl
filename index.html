@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StudentPL</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #111827;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.language-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.language-buttons button {
+    border: none;
+    background: #f1f5f9;
+    padding: 8px 11px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.language-buttons button:hover {
+    background: #dbeafe;
+}
+
+.language-buttons button.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* HERO */
+
+.hero {
+    padding: 100px 0 90px;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #dbeafe,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            #dcfce7,
+            transparent 30%
+        );
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.05;
+    max-width: 850px;
+    margin: 0 auto 25px;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 19px;
+    color: #64748b;
+}
+
+.telegram {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background: #2563eb;
+    color: white;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.telegram:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* SERVICES */
+
+.services {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 30px;
+    min-height: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.card-number {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* INFO */
+
+.info {
+    padding: 20px 0 80px;
+}
+
+.info-box {
+    background: #111827;
+    color: white;
+    border-radius: 22px;
+    padding: 40px;
+    text-align: center;
+}
+
+.info-box h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.info-box p {
+    color: #cbd5e1;
+}
+
+/* CONTACT */
+
+.contact {
+    padding: 0 0 90px;
+}
+
+.contact-box {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    padding: 45px;
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+    color: #64748b;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111827;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 500px) {
+
+    nav {
+        height: 65px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .language-buttons button {
+        padding: 7px 9px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <div class="logo">
+                Student<span>PL</span>
+            </div>
+
+            <div class="language-buttons">
+
+                <button
+                    class="active"
+                    onclick="changeLanguage('uk')">
+                    UA
+                </button>
+
+                <button
+                    onclick="changeLanguage('ru')">
+                    RU
+                </button>
+
+                <button
+                    onclick="changeLanguage('es')">
+                    ES
+                </button>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1 id="title">
+            Довідка студента для
+            <span>роботи в Польщі</span>
+        </h1>
+
+        <p id="subtitle">
+            Офіційні документи від навчальних закладів
+        </p>
+
+        <a
+            href="https://t.me/studakpl"
+            target="_blank"
+            class="telegram"
+            id="telegram">
+            Написати в Telegram
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services">
+
+    <div class="container">
+
+        <h2
+            class="section-title"
+            id="servicesTitle">
+            Наші послуги
+        </h2>
+
+
+        <div class="cards">
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="card" id="card1">
+
+                <div class="card-number">
+                    1
+                </div>
+
+                <p id="service1">
+
+                    Довідка з українського університету
+                    + переклад на польську
+                    + за потреби пластик
+
+                </p>
+
+            </div>
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="card" id="card2">
+
+                <div class="card-number">
+                    2
+                </div>
+
+                <p id="service2">
+
+                    Довідка з поліцеальної школи
+                    + за потреби легітимація
+
+                </p>
+
+            </div>
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="card" id="card3">
+
+                <div class="card-number">
+                    3
+                </div>
+
+                <p id="service3">
+
+                    Довідка з польського Університету
+                    + за потреби легітимація
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INFO ================= -->
+
+<section class="info">
+
+    <div class="container">
+
+        <div class="info-box">
+
+            <h2 id="infoTitle">
+                Інформація
+            </h2>
+
+            <p id="infoText">
+
+                Виготовлення займає 1–2 робочих дні.
+                Оплата по готовності.
+                Доставка InPost Paczkomat.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2 id="contactTitle">
+                Потрібна довідка?
+            </h2>
+
+            <p id="contactText">
+                Напишіть нам у Telegram
+            </p>
+
+            <a
+                href="https://t.me/studakpl"
+                target="_blank"
+                class="telegram">
+
+                @studakpl
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 StudentPL
+
+</footer>
+
+
+<!-- ================= LANGUAGE SCRIPT ================= -->
+
+<script>
+
+function changeLanguage(language) {
+
+
+    const buttons =
+        document.querySelectorAll(
+            ".language-buttons button"
+        );
+
+
+    /* RESET BUTTONS */
+
+    buttons.forEach(button => {
+
+        button.classList.remove("active");
+
+    });
+
+
+    /* ================= UKRAINIAN ================= */
+
+    if (language === "uk") {
+
+        document.documentElement.lang = "uk";
+
+
+        document.getElementById("title").innerHTML =
+            'Довідка студента для <span>роботи в Польщі</span>';
+
+
+        document.getElementById("subtitle").innerText =
+            "Офіційні документи від навчальних закладів";
+
+
+        document.getElementById("telegram").innerText =
+            "Написати в Telegram";
+
+
+        document.getElementById("servicesTitle").innerText =
+            "Наші послуги";
+
+
+        document.getElementById("service1").innerText =
+            "Довідка з українського університету + переклад на польську + за потреби пластик";
+
+
+        document.getElementById("service2").innerText =
+            "Довідка з поліцеальної школи + за потреби легітимація";
+
+
+        document.getElementById("service3").innerText =
+            "Довідка з польського Університету + за потреби легітимація";
+
+
+        document.getElementById("infoTitle").innerText =
+            "Інформація";
+
+
+        document.getElementById("infoText").innerText =
+            "Виготовлення займає 1–2 робочих дні. Оплата по готовності. Доставка InPost Paczkomat.";
+
+
+        document.getElementById("contactTitle").innerText =
+            "Потрібна довідка?";
+
+
+        document.getElementById("contactText").innerText =
+            "Напишіть нам у Telegram";
+
+
+        /* SHOW THIRD CARD */
+
+        document.getElementById("card3").style.display =
+            "block";
+
+
+        buttons[0].classList.add("active");
+
+    }
+
+
+    /* ================= RUSSIAN ================= */
+
+    if (language === "ru") {
+
+        document.documentElement.lang = "ru";
+
+
+        document.getElementById("title").innerHTML =
+            'Справка студента для <span>работы в Польше</span>';
+
+
+        document.getElementById("subtitle").innerText =
+            "Официальные документы от учебных заведений";
+
+
+        document.getElementById("telegram").innerText =
+            "Написать в Telegram";
+
+
+        document.getElementById("servicesTitle").innerText =
+            "Наши услуги";
+
+
+        document.getElementById("service1").innerText =
+            "Справка из украинского университета + перевод на польский + при необходимости пластик";
+
+
+        document.getElementById("service2").innerText =
+            "Справка из полицеальной школы + при необходимости легитимация";
+
+
+        document.getElementById("service3").innerText =
+            "Справка из польского Университета + при необходимости легитимация";
+
+
+        document.getElementById("infoTitle").innerText =
+            "Информация";
+
+
+        document.getElementById("infoText").innerText =
+            "Изготовление занимает 1–2 рабочих дня. Оплата по готовности. Доставка InPost Paczkomat.";
+
+
+        document.getElementById("contactTitle").innerText =
+            "Нужна справка?";
+
+
+        document.getElementById("contactText").innerText =
+            "Напишите нам в Telegram";
+
+
+        /* SHOW THIRD CARD */
+
+        document.getElementById("card3").style.display =
+            "block";
+
+
+        buttons[1].classList.add("active");
+
+    }
+
+
+    /* ================= SPANISH ================= */
+
+    if (language === "es") {
+
+        document.documentElement.lang = "es";
+
+
+        document.getElementById("title").innerHTML =
+            'Certificado de estudiante para <span>trabajar en Polonia</span>';
+
+
+        document.getElementById("subtitle").innerText =
+            "Documentos oficiales de instituciones educativas";
+
+
+        document.getElementById("telegram").innerText =
+            "Escribir en Telegram";
+
+
+        document.getElementById("servicesTitle").innerText =
+            "Servicios";
+
+
+        /*
+        В ИСПАНСКОЙ ВЕРСИИ
+        ОСТАВЛЯЕМ ТОЛЬКО 2 УСЛУГИ
+        */
+
+
+        document.getElementById("service1").innerText =
+            "Certificado de una escuela de formación profesional + credencial de estudiante si es necesario";
+
+
+        document.getElementById("service2").innerText =
+            "Certificado de una universidad polaca + credencial de estudiante si es necesario (plástico verde)";
+
+
+        /* HIDE THIRD CARD */
+
+        document.getElementById("card3").style.display =
+            "none";
+
+
+        document.getElementById("infoTitle").innerText =
+            "Información";
+
+
+        document.getElementById("infoText").innerText =
+            "Elaboración en 1–2 días laborables. Pago al finalizar. Entrega mediante InPost Paczkomat.";
+
+
+        document.getElementById("contactTitle").innerText =
+            "¿Necesitas un certificado?";
+
+
+        document.getElementById("contactText").innerText =
+            "Escríbenos por Telegram";
+
+
+        buttons[2].classList.add("active");
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
